@@ -1,0 +1,4 @@
+{
+    "python.pythonPath": "telusko\\Scripts\\python.exe",
+    "python.formatting.provider": "autopep8"
+}
