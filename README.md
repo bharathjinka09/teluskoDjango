@@ -1,2 +1,2 @@
-# telukoDjango
+# teluskoDjango
 Django Tutorial
