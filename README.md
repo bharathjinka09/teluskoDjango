@@ -1,0 +1,2 @@
+# teluskoDjango
+Django Tutorial
