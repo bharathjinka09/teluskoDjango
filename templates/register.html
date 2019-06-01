@@ -5,12 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Register</title>
 </head>
 
 <body>
+
     <form action="register" method="post" style="text-align: center;">
         {% csrf_token %}
+        <h1>Registration Form</h1>
         <input type="text" name="first_name" placeholder="Enter first name"><br><br>
         <input type="text" name="last_name" placeholder="Enter last name"><br><br>
         <input type="text" name="username" placeholder="Enter user name"><br><br>
@@ -19,6 +23,16 @@
         <input type="password" name="password2" placeholder="Confirm password"><br><br>
         <input type="submit" value="Submit">
     </form>
+    <br>
+    <div style="text-align: center;">
+
+        {% for msg in messages %}
+        <div class="alert alert-{{msg.level_tag}}" role="alert">
+            {{msg.message}}
+        </div>
+        {% endfor %}
+
+    </div>
 </body>
 
 </html>
