@@ -12,11 +12,12 @@
 </head>
 
 <body>
-    <form action="login" method="post">
+    <form action="login" method="post" style="text-align: center;">
         {% csrf_token %}
+        <h1><i>Login Form</i></h1>
         <input type="text" name="username" placeholder="Username"><br><br>
         <input type="password" name="password" placeholder="Password"><br><br>
-        <input type="submit" value="Login"><br>
+        <input class="btn btn-info" type="submit" value="Login"><br>
     </form><br>
 
     <div style="text-align: center;">

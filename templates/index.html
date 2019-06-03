@@ -23,8 +23,8 @@
 	<div class="super_container">
 
 		<!-- Header -->
-
 		<header class="header">
+
 			<div class="container">
 				<div class="row">
 					<div class="col">
@@ -37,8 +37,8 @@
 										<li><a href="contact.html">Contact</a></li>
 
 										{% if user.is_authenticated %}
-										<li><a href="accounts/logout">Logout</a></li>
 										<li style="color: white;">Welcome {{ user.first_name }}</li>
+										<li><a href="accounts/logout">Logout</a></li>
 
 										{% else %}
 										<li><a href="accounts/register">Register</a></li>
@@ -106,6 +106,7 @@
 		</div>
 
 		<!-- Home -->
+		{% if user.is_authenticated %}
 
 		<div class="home">
 
@@ -616,7 +617,17 @@
 					target="_blank">Colorlib</a>
 				<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 			</div>
+
 		</footer>
+		{% else %}
+		<div class="container" style="padding: 10%; text-align:center;">
+			<h3 style="text-align: center; color:black;">Please login or register to continue...</h3>
+			<a href="/accounts/login" class="btn btn-success">Login</a>
+			<a href="/accounts/register" class="btn btn-primary">Register</a>
+		</div>
+
+		{% endif %}
+
 	</div>
 
 	<script src="{% static 'js/jquery-3.2.1.min.js' %}">
